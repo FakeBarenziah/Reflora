@@ -43,7 +43,6 @@ export default class World extends Phaser.Scene{
         
         this.robot = this.physics.add.sprite(400, 400, 'robot')
         this.robot.setScale(0.15);
-        this.robot.setBounce(0.5, 0.5);
         this.robot.setCollideWorldBounds(true);
         
         this.boxes = this.physics.add.group({
@@ -64,7 +63,7 @@ export default class World extends Phaser.Scene{
         this.anims.create({
             key: 'left',
             frames: this.anims.generateFrameNumbers('robot', { start: 1, end: 5 }),
-            frameRate: 7,
+            frameRate: 10,
             repeat: -1
         });
         
@@ -77,14 +76,14 @@ export default class World extends Phaser.Scene{
         this.anims.create({
             key: 'right',
             frames: this.anims.generateFrameNumbers('robot', { start: 0, end: 5 }),
-            frameRate: 7,
+            frameRate: 10,
             repeat: -1
         });
 
         this.anims.create({
             key: 'hammer',
             frames: this.anims.generateFrameNumbers('robot', { start:6, end:7 }),
-            frameRate:7,
+            frameRate:10,
             repeat: -1
         })
         
