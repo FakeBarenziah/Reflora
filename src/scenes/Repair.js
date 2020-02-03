@@ -1,6 +1,4 @@
-import Phaser from "phaser"
-
-export default class Repair extends Phaser.Scene{
+class Repair extends Phaser.Scene{
     constructor(){
         super({key:"repairScreen"})
         this.log1 = 'Log 27980: Day 3364'
