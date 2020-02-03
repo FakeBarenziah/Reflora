@@ -128,7 +128,7 @@ export default class World extends Phaser.Scene{
         if (this.keys.left.isDown){
             this.fix = false
             this.robot.setVelocityX(-160)
-            if(!this.stepSound.isPlaying){
+            if(!this.stepSound.isPlaying && (this.robot.body.touching.down || this.robot.body.onFloor())){
                 this.stepSound.play()
             }
             this.robot.flipX = false
@@ -138,7 +138,7 @@ export default class World extends Phaser.Scene{
         else if (this.keys.right.isDown){
             this.fix = false
             this.robot.setVelocityX(160)
-            if(!this.stepSound.isPlaying){
+            if(!this.stepSound.isPlaying && (this.robot.body.touching.down || this.robot.body.onFloor())){
                 this.stepSound.play()
             }
             this.robot.flipX = true
