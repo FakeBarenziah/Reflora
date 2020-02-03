@@ -33,7 +33,7 @@ export default class World extends Phaser.Scene{
         this.boiler.setOrigin(0, 0).setScale(0.516)
 
         this.door = this.physics.add.staticGroup()
-        this.door.create(780, 500, 'door').setScale(0.2)
+        this.door.create(780, 500, 'door')
 
         this.hud = this.physics.add.staticGroup()
         this.hud.create(800, 0, 'hud').setOrigin(0, 0).setScale(0.33).refreshBody()
