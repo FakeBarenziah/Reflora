@@ -17,26 +17,39 @@ export default class Repair extends Phaser.Scene{
             this.add.text(50, 100, 
                 this.log2,
                 {fontSize:"18px"},
-            )}, 500)
+            )}, 250)
         
         setTimeout(() => {
             this.add.text(50,130, 
                 this.log3, 
                 {fontSize:"18px"}
-            )}, 2200)
+            )}, 1100)
 
         setTimeout(() => {
             this.add.text(50, 160, 
                 this.log4, 
                 {fontSize:"18px"}
-            )}, 4000)
+            )}, 2000)
 
         setTimeout(() => {
             this.add.text(50, 190, 
                 this.log5, 
                 {fontSize:"18px"}
-            )}, 6000)
+            )}, 3000)
 
-        setTimeout(() => {this.scene.start("mainWorld")}, 8000)
+	this.add.text(50, 310, "Press SPACE to begin...", {fontSize:"18px"})
+
+    this.timerKey = setTimeout(() => {this.scene.start("mainWorld")}, 9000)
+
+	this.keys = {
+		next : this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
+	}
     }
+	update(){
+		if(this.keys.next.isDown){
+            clearInterval(this.timerKey)
+			this.scene.start("mainWorld")
+		}
+	}
+
 }

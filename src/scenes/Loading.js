@@ -39,6 +39,18 @@ export default class Loading extends Phaser.Scene{
             this.add.text(50, 310, this.log5, {fontSize:"18px"})
         }, 20000)
 
-        setTimeout(() => {this.scene.start("repairScreen")}, 23000)
+	    this.add.text(50, 500, "Press SPACE to skip...", {fontSize:"18px"})
+
+        this.timerKey = setTimeout(() => {this.scene.start("repairScreen")}, 18000)
+
+        this.keys = {
+            next : this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.SPACE)
+        }
     }
+	update(){
+		if(this.keys.next.isDown){
+            clearTimeout(this.timerKey)
+			this.scene.start("repairScreen")
+		}
+	}
 }
