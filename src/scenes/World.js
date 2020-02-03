@@ -7,12 +7,12 @@ export default class World extends Phaser.Scene{
             width:800,
             height:600
         })
-        this.boxesCleared = 0
         this.fix = false
         this.boxScore = "Start opening boxes!\nBoxes Searched: 0"
     }
 
     preload(){
+        this.boxesCleared = 0
         this.load.image('boiler', 'src/assets/boiler.png')
         this.load.spritesheet('robot', 'src/assets/ggj_chamalet_2020.png', {
             frameWidth:657, 
